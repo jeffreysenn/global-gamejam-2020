@@ -71,7 +71,7 @@ Material:
     m_Floats:
     - Vector1_8EC3CEF2: -2
     - Vector1_D418ED0B: 64
-    - Vector1_FB0F8E84: 0.05
+    - Vector1_FB0F8E84: 0.01
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
