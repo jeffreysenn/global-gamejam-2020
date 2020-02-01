@@ -41,7 +41,7 @@ public class Throw : MonoBehaviour
             var fraction = holdButtonTime > maxHoldTime ? 1.0f : holdButtonTime / maxHoldTime;
             holdButtonTime = -1.0f;
             var impulse = Vector2.Lerp(minThrowImpulse, maxThrowImpulse, fraction);
-            impulse *= transform.localScale.x;
+            impulse.x *= transform.localScale.x;
             rgBody.AddForce(impulse, ForceMode2D.Impulse);
             pickup.ResetPickupable();
         }
