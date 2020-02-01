@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-
-
 public class HoleManager : MonoBehaviour
 {
     [SerializeField] private string TeamName = "Pirates";

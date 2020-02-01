@@ -4,6 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(CapsuleCollider2D))]
+[RequireComponent(typeof(InputID))]
 public class MovementComponent : MonoBehaviour
 {
     [SerializeField] float jumpImpulse = 5;
@@ -12,9 +13,11 @@ public class MovementComponent : MonoBehaviour
     [SerializeField] float groundCheckOvershoot = .3f;
     [SerializeField] float jumpCooldown = .1f;
     [SerializeField] float flipAxisThreshold = .1f;
+    [SerializeField] float groundCheckRatio = .8f;
 
-    Rigidbody2D rgBody;
-    CapsuleCollider2D capsuleCollider;
+    Rigidbody2D rgBody = null;
+    CapsuleCollider2D capsuleCollider = null;
+    InputID inputID = null;
     bool shouldJump = false;
     util.Timer jumpTimer = new util.Timer(0.0f);
 
@@ -22,12 +25,14 @@ public class MovementComponent : MonoBehaviour
     {
         rgBody = GetComponent<Rigidbody2D>();
         capsuleCollider = GetComponent<CapsuleCollider2D>();
+        inputID = GetComponent<InputID>();
     }
 
     private void Update()
     {
         jumpTimer.Countdown(Time.deltaTime);
-        if (Input.GetButtonDown("Jump") && jumpTimer.IsTimeUp() && IsGrounded())
+        var jump = inputID.GetActionName(InputID.Action.JUMP);
+        if (Input.GetButtonDown(jump) && jumpTimer.IsTimeUp() && IsGrounded())
         {
             shouldJump = true;
             jumpTimer.SetCountdown(jumpCooldown);
@@ -51,7 +56,8 @@ public class MovementComponent : MonoBehaviour
 
     private void Walk()
     {
-        var hAxis = Input.GetAxis("Horizontal");
+        var h = inputID.GetActionName(InputID.Action.H_AXIS);
+        var hAxis = Input.GetAxis(h);
         if (Mathf.Abs(hAxis) > flipAxisThreshold)
         {
             var locScaleX = hAxis > 0 ? 1 : -1;
@@ -66,8 +72,13 @@ public class MovementComponent : MonoBehaviour
 
     private bool IsGrounded()
     {
-        float raycastDistance = capsuleCollider.bounds.size.y / 2 + groundCheckOvershoot;
-        RaycastHit2D[] hits = Physics2D.RaycastAll(capsuleCollider.bounds.center, -Vector2.up, raycastDistance);
+        float radius = capsuleCollider.bounds.size.x / 2;
+        float raycastDistance = capsuleCollider.bounds.size.y / 2 - radius + groundCheckOvershoot;
+        RaycastHit2D[] hits = Physics2D.CircleCastAll(
+            capsuleCollider.bounds.center, 
+            radius * groundCheckRatio,  
+            - Vector2.up, 
+            raycastDistance);
         foreach (RaycastHit2D hit in hits)
         {
             var areSameObject = GameObject.ReferenceEquals(hit.transform.gameObject, gameObject);

@@ -7,6 +7,7 @@ public class BoxSpawner : MonoBehaviour
     [SerializeField] private GameObject BoxPrefab = null;
 
     [SerializeField] private float SpawnDelay = 3.0f;
+    [SerializeField] private int SpawnMax = 7;
 
     private float SpawnTimer = 0.0f;
 
@@ -19,8 +20,11 @@ public class BoxSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GameObject[] allBoxes = GameObject.FindGameObjectsWithTag("Box");
+
         SpawnTimer -= Time.deltaTime;
-        if(SpawnTimer < 0)
+        if(SpawnTimer < 0
+            && allBoxes.Length < SpawnMax)
         {
             SpawnBox();
         }
