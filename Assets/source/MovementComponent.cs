@@ -11,6 +11,7 @@ public class MovementComponent : MonoBehaviour
     [SerializeField] float airControl = 0.5f;
     [SerializeField] float groundCheckOvershoot = .3f;
     [SerializeField] float jumpCooldown = .1f;
+    [SerializeField] float flipAxisThreshold = .1f;
 
     Rigidbody2D rgBody;
     CapsuleCollider2D capsuleCollider;
@@ -51,6 +52,13 @@ public class MovementComponent : MonoBehaviour
     private void Walk()
     {
         var hAxis = Input.GetAxis("Horizontal");
+        if (Mathf.Abs(hAxis) > flipAxisThreshold)
+        {
+            var locScaleX = hAxis > 0 ? 1 : -1;
+            var newLocScale = transform.localScale;
+            newLocScale.x = locScaleX;
+            transform.localScale = newLocScale;
+        }
         var walkSpeed = hAxis * maxWalkSpeed;
         if (!IsGrounded()) { walkSpeed *= airControl; }
         rgBody.velocity = new Vector2(walkSpeed, rgBody.velocity.y);
@@ -62,7 +70,8 @@ public class MovementComponent : MonoBehaviour
         RaycastHit2D[] hits = Physics2D.RaycastAll(capsuleCollider.bounds.center, -Vector2.up, raycastDistance);
         foreach (RaycastHit2D hit in hits)
         {
-            if (!hit.transform.tag.Equals("Player"))
+            var areSameObject = GameObject.ReferenceEquals(hit.transform.gameObject, gameObject);
+            if (!areSameObject)
                 return true;
         }
         return false;
