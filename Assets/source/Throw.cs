@@ -8,6 +8,8 @@ public class Throw : MonoBehaviour
 {
     [SerializeField] Vector2 maxThrowImpulse = new Vector2(1000, 0);
     [SerializeField] Vector2 minThrowImpulse = new Vector2(100, 0);
+    [SerializeField] Vector2 dropOffset = new Vector2(1, 0);
+    [SerializeField] float tossThreshold = 0.2f;
     [SerializeField] float maxHoldTime = 1.0f;
     [SerializeField] float throwAfterPickupTime = 0.1f;
 
@@ -31,17 +33,26 @@ public class Throw : MonoBehaviour
 
     private void ChargeThrow(string throwButton)
     {
-        if (Input.GetButtonUp(throwButton) 
-            && holdButtonTime >= 0.0f)
+        if (Input.GetButtonUp(throwButton) && holdButtonTime >= 0)
         {
             var pickupable = pickup.GetPickupable();
             pickupable.transform.parent = null;
             var rgBody = pickupable.GetComponent<Rigidbody2D>();
+            var impulse = Vector2.zero;
+            if (holdButtonTime >= tossThreshold)
+            {
+                var fraction = holdButtonTime > maxHoldTime ? 1.0f : holdButtonTime / maxHoldTime;
+                impulse = Vector2.Lerp(minThrowImpulse, maxThrowImpulse, fraction);
+                impulse.x *= transform.localScale.x;
+            }
+            else
+            {
+                var offset = dropOffset;
+                offset.x *= transform.localScale.x;
+                pickupable.transform.position =  ((Vector2)transform.position + offset);
+            }
             rgBody.isKinematic = false;
-            var fraction = holdButtonTime > maxHoldTime ? 1.0f : holdButtonTime / maxHoldTime;
             holdButtonTime = -1.0f;
-            var impulse = Vector2.Lerp(minThrowImpulse, maxThrowImpulse, fraction);
-            impulse.x *= transform.localScale.x;
             rgBody.AddForce(impulse, ForceMode2D.Impulse);
             pickup.ResetPickupable();
         }
@@ -49,14 +60,14 @@ public class Throw : MonoBehaviour
 
     private void Charge(string throwButton)
     {
-        if (Input.GetButtonDown(throwButton) 
+        if (Input.GetButtonDown(throwButton)
             && pickup.HasPickupable()
             && Time.time - pickup.GetPickupTime() >= throwAfterPickupTime)
         {
             holdButtonTime = 0.0f;
         }
 
-        if(Input.GetButton(throwButton) &&  holdButtonTime >= 0.0f)
+        if (Input.GetButton(throwButton) && holdButtonTime >= 0.0f)
         {
             holdButtonTime += Time.deltaTime;
         }
