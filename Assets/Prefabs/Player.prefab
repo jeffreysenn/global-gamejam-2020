@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 5507042080145150617}
   - component: {fileID: 5507042080145150616}
+  - component: {fileID: -1196679080560734932}
   - component: {fileID: 5507042080145150618}
-  - component: {fileID: 5507042080145150620}
-  - component: {fileID: 5507042080145150619}
-  - component: {fileID: 5507042080145150623}
   - component: {fileID: 5507042080145150622}
   - component: {fileID: 5507042080145150621}
+  - component: {fileID: 5507042080145150620}
+  - component: {fileID: 5507042080145150619}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -87,6 +87,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-1196679080560734932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5507042080145150599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21d7bf56e4c4b8644b9d5c58bf8dcc78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5507042080145150618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,12 +111,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 841f17df2022f734bae6bf1db2101737, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpImpulse: 5
+  jumpImpulse: 7
   maxWalkSpeed: 9
   airControl: 0.5
   groundCheckOvershoot: 0.3
   jumpCooldown: 0.1
   flipAxisThreshold: 0.1
+  horizontalAxisName: Horizontal
+  jumpButtonName: Jump
+--- !u!114 &5507042080145150622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5507042080145150599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf6878a4385950345983c93f7fee4488, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickupRange: 1
+  pickupOffset: {x: 0, y: 2}
+  pickUpButton: Fire1
+--- !u!114 &5507042080145150621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5507042080145150599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19adeb502f076e24dab30a7cd955a43d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  throwImpulse: {x: 500, y: 0}
+  throwButton: Fire1
 --- !u!50 &5507042080145150620
 Rigidbody2D:
   serializedVersion: 4
@@ -142,42 +185,3 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
---- !u!114 &5507042080145150623
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5507042080145150599}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57a88c1965e35494bb70b6dac37df3f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5507042080145150622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5507042080145150599}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf6878a4385950345983c93f7fee4488, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pickupRange: 1
-  pickupOffset: {x: 0, y: 2}
---- !u!114 &5507042080145150621
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5507042080145150599}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19adeb502f076e24dab30a7cd955a43d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  throwImpulse: {x: 500, y: 0}
