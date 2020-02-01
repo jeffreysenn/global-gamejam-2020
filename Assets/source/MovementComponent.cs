@@ -71,8 +71,12 @@ public class MovementComponent : MonoBehaviour
 
     private bool IsGrounded()
     {
-        float raycastDistance = capsuleCollider.bounds.size.y / 2 + groundCheckOvershoot;
-        RaycastHit2D[] hits = Physics2D.RaycastAll(capsuleCollider.bounds.center, -Vector2.up, raycastDistance);
+        float radius = capsuleCollider.bounds.size.y / 2;
+        float raycastDistance = capsuleCollider.bounds.size.y / 2 - radius + groundCheckOvershoot;
+        RaycastHit2D[] hits = Physics2D.CircleCastAll(capsuleCollider.bounds.center, 
+            radius,  
+            - Vector2.up, 
+            raycastDistance);
         foreach (RaycastHit2D hit in hits)
         {
             var areSameObject = GameObject.ReferenceEquals(hit.transform.gameObject, gameObject);
