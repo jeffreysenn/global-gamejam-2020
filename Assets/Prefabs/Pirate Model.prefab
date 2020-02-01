@@ -221,13 +221,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c008f954fe54a8bb972de1018a2cb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RootBone: {fileID: 139079202525010227}
-  m_BoneTransforms:
-  - {fileID: 7265283480962981872}
-  - {fileID: 139079202525010227}
+  m_RootBone: {fileID: 0}
+  m_BoneTransforms: []
   m_Bounds:
-    m_Center: {x: 2.4650323, y: -0.3758893, z: 0}
-    m_Extent: {x: 3.5386, y: 1.6593745, z: 0}
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
   m_UseBatching: 1
 --- !u!1 &2541587438927413294
 GameObject:
@@ -324,12 +322,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c008f954fe54a8bb972de1018a2cb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RootBone: {fileID: 8266441576142893829}
-  m_BoneTransforms:
-  - {fileID: 8266441576142893829}
+  m_RootBone: {fileID: 0}
+  m_BoneTransforms: []
   m_Bounds:
-    m_Center: {x: 2.4266512, y: -0.6166308, z: 0}
-    m_Extent: {x: 2.6027083, y: 3.6765804, z: 0}
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
   m_UseBatching: 1
 --- !u!1 &3009119483465048988
 GameObject:
@@ -410,21 +407,12 @@ MonoBehaviour:
   m_SolveFromDefaultPose: 1
   m_Weight: 1
   m_Chain:
-    m_EffectorTransform: {fileID: 3039681189881968554}
-    m_TargetTransform: {fileID: 3039681188737225784}
+    m_EffectorTransform: {fileID: 0}
+    m_TargetTransform: {fileID: 0}
     m_TransformCount: 3
-    m_Transforms:
-    - {fileID: 139079202525010227}
-    - {fileID: 7265283480962981872}
-    - {fileID: 3039681189881968554}
-    m_DefaultLocalRotations:
-    - {x: 0, y: -0, z: 0.9674251, w: 0.25315735}
-    - {x: 0, y: 0, z: -0.21326737, w: 0.9769939}
-    - {x: 0, y: 0, z: 0, w: 1}
-    m_StoredLocalRotations:
-    - {x: 0, y: 0, z: 0, w: 0}
-    - {x: 0, y: 0, z: 0, w: 0}
-    - {x: 0, y: 0, z: 0, w: 0}
+    m_Transforms: []
+    m_DefaultLocalRotations: []
+    m_StoredLocalRotations: []
   m_Flip: 0
 --- !u!1 &3039681188004707691
 GameObject:
@@ -534,22 +522,13 @@ MonoBehaviour:
   m_SolveFromDefaultPose: 1
   m_Weight: 1
   m_Chain:
-    m_EffectorTransform: {fileID: 3039681188623165682}
-    m_TargetTransform: {fileID: 3039681189298143362}
+    m_EffectorTransform: {fileID: 0}
+    m_TargetTransform: {fileID: 0}
     m_TransformCount: 3
-    m_Transforms:
-    - {fileID: 5699129588898803897}
-    - {fileID: 7418637147822021703}
-    - {fileID: 3039681188623165682}
-    m_DefaultLocalRotations:
-    - {x: -0, y: -0, z: 0.9779095, w: 0.20902887}
-    - {x: -0, y: -0, z: 0.18388076, w: 0.98294854}
-    - {x: 0, y: 0, z: 0, w: 1}
-    m_StoredLocalRotations:
-    - {x: 0, y: 0, z: 0, w: 0}
-    - {x: 0, y: 0, z: 0, w: 0}
-    - {x: 0, y: 0, z: 0, w: 0}
-  m_Flip: 1
+    m_Transforms: []
+    m_DefaultLocalRotations: []
+    m_StoredLocalRotations: []
+  m_Flip: 0
 --- !u!1 &3039681188737225767
 GameObject:
   m_ObjectHideFlags: 0
@@ -688,22 +667,13 @@ MonoBehaviour:
   m_SolveFromDefaultPose: 1
   m_Weight: 1
   m_Chain:
-    m_EffectorTransform: {fileID: 3039681188901706524}
-    m_TargetTransform: {fileID: 3039681189641005537}
+    m_EffectorTransform: {fileID: 0}
+    m_TargetTransform: {fileID: 0}
     m_TransformCount: 3
-    m_Transforms:
-    - {fileID: 4270705643532025125}
-    - {fileID: 8016618330065083544}
-    - {fileID: 3039681188901706524}
-    m_DefaultLocalRotations:
-    - {x: -0, y: -0, z: 0.99689925, w: 0.07868879}
-    - {x: -0, y: -0, z: 0.14919478, w: 0.98880786}
-    - {x: 0, y: 0, z: 0, w: 1}
-    m_StoredLocalRotations:
-    - {x: 0, y: 0, z: 0, w: 0}
-    - {x: 0, y: 0, z: 0, w: 0}
-    - {x: 0, y: 0, z: 0, w: 0}
-  m_Flip: 1
+    m_Transforms: []
+    m_DefaultLocalRotations: []
+    m_StoredLocalRotations: []
+  m_Flip: 0
 --- !u!1 &3039681189298143361
 GameObject:
   m_ObjectHideFlags: 0
@@ -842,21 +812,12 @@ MonoBehaviour:
   m_SolveFromDefaultPose: 1
   m_Weight: 1
   m_Chain:
-    m_EffectorTransform: {fileID: 3039681188004707692}
-    m_TargetTransform: {fileID: 3039681189177118958}
+    m_EffectorTransform: {fileID: 0}
+    m_TargetTransform: {fileID: 0}
     m_TransformCount: 3
-    m_Transforms:
-    - {fileID: 253812756823597432}
-    - {fileID: 8225678794133448784}
-    - {fileID: 3039681188004707692}
-    m_DefaultLocalRotations:
-    - {x: 0, y: -0, z: -0.93657434, w: 0.35046905}
-    - {x: 0, y: 0, z: -0.33513802, w: 0.9421691}
-    - {x: 0, y: 0, z: 0, w: 1}
-    m_StoredLocalRotations:
-    - {x: 0, y: 0, z: 0, w: 0}
-    - {x: 0, y: 0, z: 0, w: 0}
-    - {x: 0, y: 0, z: 0, w: 0}
+    m_Transforms: []
+    m_DefaultLocalRotations: []
+    m_StoredLocalRotations: []
   m_Flip: 0
 --- !u!1 &3161761445666299113
 GameObject:
@@ -986,13 +947,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c008f954fe54a8bb972de1018a2cb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RootBone: {fileID: 6403713867316139538}
-  m_BoneTransforms:
-  - {fileID: 6403713867316139538}
-  - {fileID: 8266441576142893829}
+  m_RootBone: {fileID: 0}
+  m_BoneTransforms: []
   m_Bounds:
-    m_Center: {x: 4.886381, y: -0.22968268, z: 0}
-    m_Extent: {x: 3.8025856, y: 2.843548, z: 0}
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
   m_UseBatching: 1
 --- !u!1 &4460010216440054350
 GameObject:
@@ -1089,13 +1048,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c008f954fe54a8bb972de1018a2cb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RootBone: {fileID: 4270705643532025125}
-  m_BoneTransforms:
-  - {fileID: 8016618330065083544}
-  - {fileID: 4270705643532025125}
+  m_RootBone: {fileID: 0}
+  m_BoneTransforms: []
   m_Bounds:
-    m_Center: {x: 2.6975138, y: 0.28962505, z: 0}
-    m_Extent: {x: 4.2082076, y: 1.593493, z: 0}
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
   m_UseBatching: 1
 --- !u!1 &4463499235384905823
 GameObject:
@@ -1176,11 +1133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 097b551f2844b054290f18a39bf892e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Solvers:
-  - {fileID: 3039681188002978373}
-  - {fileID: 3039681190023607063}
-  - {fileID: 3039681188653781103}
-  - {fileID: 3039681189287301604}
+  m_Solvers: []
   m_Weight: 1
 --- !u!1 &4846581537679141723
 GameObject:
@@ -1277,12 +1230,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c008f954fe54a8bb972de1018a2cb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RootBone: {fileID: 7265283480962981872}
-  m_BoneTransforms:
-  - {fileID: 7265283480962981872}
+  m_RootBone: {fileID: 0}
+  m_BoneTransforms: []
   m_Bounds:
-    m_Center: {x: 3.8717518, y: -0.24527097, z: 0}
-    m_Extent: {x: 1.8751407, y: 1.3459843, z: 0}
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
   m_UseBatching: 1
 --- !u!1 &4981513666201304660
 GameObject:
@@ -1379,12 +1331,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c008f954fe54a8bb972de1018a2cb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RootBone: {fileID: 8266441576142893829}
-  m_BoneTransforms:
-  - {fileID: 8266441576142893829}
+  m_RootBone: {fileID: 0}
+  m_BoneTransforms: []
   m_Bounds:
-    m_Center: {x: 2.1024714, y: 0.06833255, z: 0}
-    m_Extent: {x: 1.4427888, y: 1.4586686, z: 0}
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
   m_UseBatching: 1
 --- !u!1 &6334994091502869720
 GameObject:
@@ -1542,13 +1493,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c008f954fe54a8bb972de1018a2cb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RootBone: {fileID: 253812756823597432}
-  m_BoneTransforms:
-  - {fileID: 253812756823597432}
-  - {fileID: 8225678794133448784}
+  m_RootBone: {fileID: 0}
+  m_BoneTransforms: []
   m_Bounds:
-    m_Center: {x: 2.4326465, y: -0.83629274, z: 0}
-    m_Extent: {x: 4.1763477, y: 2.0851445, z: 0}
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
   m_UseBatching: 1
 --- !u!1 &7293305757478915813
 GameObject:
@@ -1675,12 +1624,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c008f954fe54a8bb972de1018a2cb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RootBone: {fileID: 8266441576142893829}
-  m_BoneTransforms:
-  - {fileID: 8266441576142893829}
+  m_RootBone: {fileID: 0}
+  m_BoneTransforms: []
   m_Bounds:
-    m_Center: {x: 4.2314787, y: -0.32414174, z: 0}
-    m_Extent: {x: 2.6928592, y: 4.257823, z: 0}
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
   m_UseBatching: 1
 --- !u!1 &7552345112193897219
 GameObject:
@@ -1808,14 +1756,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c008f954fe54a8bb972de1018a2cb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RootBone: {fileID: 8526528133292900179}
-  m_BoneTransforms:
-  - {fileID: 7418637147822021703}
-  - {fileID: 5699129588898803897}
-  - {fileID: 8526528133292900179}
+  m_RootBone: {fileID: 0}
+  m_BoneTransforms: []
   m_Bounds:
-    m_Center: {x: -2.7785413, y: 1.6020927, z: 0}
-    m_Extent: {x: 3.9447472, y: 2.2826505, z: 0}
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
   m_UseBatching: 1
 --- !u!1 &8366867082824319554
 GameObject:
@@ -1912,12 +1857,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c008f954fe54a8bb972de1018a2cb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RootBone: {fileID: 8225678794133448784}
-  m_BoneTransforms:
-  - {fileID: 8225678794133448784}
+  m_RootBone: {fileID: 0}
+  m_BoneTransforms: []
   m_Bounds:
-    m_Center: {x: 3.795829, y: -0.095318675, z: 0}
-    m_Extent: {x: 1.3041975, y: 1.0176033, z: 0}
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
   m_UseBatching: 1
 --- !u!1 &8942741369710526684
 GameObject:
@@ -2014,13 +1958,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c008f954fe54a8bb972de1018a2cb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RootBone: {fileID: 8526528133292900179}
-  m_BoneTransforms:
-  - {fileID: 8526528133292900179}
-  - {fileID: 6403713867316139538}
+  m_RootBone: {fileID: 0}
+  m_BoneTransforms: []
   m_Bounds:
-    m_Center: {x: 1.4388082, y: -0.28784895, z: 0}
-    m_Extent: {x: 5.581641, y: 4.2417135, z: 0}
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
   m_UseBatching: 1
 --- !u!1 &9148731405324815420
 GameObject:
