@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(CapsuleCollider2D))]
 public class PickUp : MonoBehaviour
 {
     [SerializeField] float pickupRange = 1.0f;
@@ -10,7 +11,9 @@ public class PickUp : MonoBehaviour
     CapsuleCollider2D capsuleCollider;
     GameObject pickedUpObject = null;
 
-    bool hasPickupable() { return pickedUpObject != null; }
+    public bool hasPickupable() { return pickedUpObject != null; }
+    public void resetPickupable() { pickedUpObject = null; }
+    public GameObject getPickupable() { return pickedUpObject; }
 
     // Start is called before the first frame update
     void Start()
@@ -23,8 +26,14 @@ public class PickUp : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1") && !hasPickupable())
         {
-            var raycastDistance = capsuleCollider.bounds.size.y / 2 + pickupRange;
-            RaycastHit2D[] hits = Physics2D.RaycastAll(capsuleCollider.bounds.center, Vector2.right, raycastDistance);
+            var boxWidth = capsuleCollider.bounds.size.x / 2 + pickupRange;
+            var boxSize = new Vector2(boxWidth, capsuleCollider.bounds.size.y);
+            var boxCenter = capsuleCollider.bounds.center;
+            boxCenter.x = capsuleCollider.bounds.center.x + transform.localScale.x * boxWidth / 2;
+            Collider2D[] hits = Physics2D.OverlapBoxAll(
+                boxCenter,
+                boxSize,
+                0);
             foreach (var hit in hits)
             {
                 var otherObject = hit.transform.gameObject;
@@ -33,7 +42,8 @@ public class PickUp : MonoBehaviour
                 {
                     if (otherObject.GetComponent<Pickable>() != null)
                     {
-                        hit.rigidbody.isKinematic = true;
+                        var rgBody = otherObject.GetComponent<Rigidbody2D>();
+                        rgBody.isKinematic = true;
                         otherObject.transform.parent = gameObject.transform;
                         otherObject.transform.localPosition = pickupOffset;
                         pickedUpObject = otherObject;
