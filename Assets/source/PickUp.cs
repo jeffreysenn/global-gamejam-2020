@@ -50,18 +50,21 @@ public class PickUp : MonoBehaviour
                 0);
             foreach (var hit in hits)
             {
-                var otherObject = hit.transform.gameObject;
-                var areSameObject = GameObject.ReferenceEquals(otherObject, gameObject);
-                if (!areSameObject)
+                if (!HasPickupable())
                 {
-                    if (otherObject.GetComponent<Pickable>() != null)
+                    var otherObject = hit.transform.gameObject;
+                    var areSameObject = GameObject.ReferenceEquals(otherObject, gameObject);
+                    if (!areSameObject)
                     {
-                        var rgBody = otherObject.GetComponent<Rigidbody2D>();
-                        rgBody.isKinematic = true;
-                        otherObject.transform.parent = gameObject.transform;
-                        otherObject.transform.localPosition = pickupOffset;
-                        pickedUpObject = otherObject;
-                        throwTimer.SetCountdown(throwCooldown);
+                        if (otherObject.GetComponent<Pickable>() != null)
+                        {
+                            var rgBody = otherObject.GetComponent<Rigidbody2D>();
+                            rgBody.isKinematic = true;
+                            otherObject.transform.parent = gameObject.transform;
+                            otherObject.transform.localPosition = pickupOffset;
+                            pickedUpObject = otherObject;
+                            throwTimer.SetCountdown(throwCooldown);
+                        }
                     }
                 }
             }
