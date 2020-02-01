@@ -1004,6 +1004,11 @@ PrefabInstance:
       propertyPath: throwButton
       value: Player 2 Fire
       objectReference: {fileID: 0}
+    - target: {fileID: 5507042080145150621, guid: 44a816a9150f9e344b4451dce4cf8deb,
+        type: 3}
+      propertyPath: throwAfterPickupTime
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5507042080145150622, guid: 44a816a9150f9e344b4451dce4cf8deb,
         type: 3}
       propertyPath: pickUpButton
@@ -1298,6 +1303,11 @@ PrefabInstance:
       propertyPath: throwButton
       value: Player 2 Fire
       objectReference: {fileID: 0}
+    - target: {fileID: 5507042080145150621, guid: 44a816a9150f9e344b4451dce4cf8deb,
+        type: 3}
+      propertyPath: throwAfterPickupTime
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5507042080145150622, guid: 44a816a9150f9e344b4451dce4cf8deb,
         type: 3}
       propertyPath: pickUpButton
@@ -1350,57 +1360,57 @@ PrefabInstance:
     - target: {fileID: 662508758580567767, guid: 44a816a9150f9e344b4451dce4cf8deb,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.3351363
+      value: -0.335136
       objectReference: {fileID: 0}
     - target: {fileID: 662508758580567767, guid: 44a816a9150f9e344b4451dce4cf8deb,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.94216967
+      value: 0.9421698
       objectReference: {fileID: 0}
     - target: {fileID: 1465482532134070815, guid: 44a816a9150f9e344b4451dce4cf8deb,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.14919358
+      value: 0.14919466
       objectReference: {fileID: 0}
     - target: {fileID: 1465482532134070815, guid: 44a816a9150f9e344b4451dce4cf8deb,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.98880804
+      value: 0.98880786
       objectReference: {fileID: 0}
     - target: {fileID: 2153429062351907520, guid: 44a816a9150f9e344b4451dce4cf8deb,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.18387659
+      value: 0.18387881
       objectReference: {fileID: 0}
     - target: {fileID: 2153429062351907520, guid: 44a816a9150f9e344b4451dce4cf8deb,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9829493
+      value: 0.98294896
       objectReference: {fileID: 0}
     - target: {fileID: 2289437925223557495, guid: 44a816a9150f9e344b4451dce4cf8deb,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.21326675
+      value: -0.2132665
       objectReference: {fileID: 0}
     - target: {fileID: 2289437925223557495, guid: 44a816a9150f9e344b4451dce4cf8deb,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.97699404
+      value: 0.9769941
       objectReference: {fileID: 0}
     - target: {fileID: 3747469153082345022, guid: 44a816a9150f9e344b4451dce4cf8deb,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.9779099
+      value: 0.97790974
       objectReference: {fileID: 0}
     - target: {fileID: 3747469153082345022, guid: 44a816a9150f9e344b4451dce4cf8deb,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.2090271
+      value: 0.20902777
       objectReference: {fileID: 0}
     - target: {fileID: 4634863016380550050, guid: 44a816a9150f9e344b4451dce4cf8deb,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.07868854
+      value: 0.07868865
       objectReference: {fileID: 0}
     - target: {fileID: 5507042080145150599, guid: 44a816a9150f9e344b4451dce4cf8deb,
         type: 3}
@@ -1410,7 +1420,7 @@ PrefabInstance:
     - target: {fileID: 5507042080145150617, guid: 44a816a9150f9e344b4451dce4cf8deb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.24
+      value: -3.3
       objectReference: {fileID: 0}
     - target: {fileID: 5507042080145150617, guid: 44a816a9150f9e344b4451dce4cf8deb,
         type: 3}
@@ -1477,6 +1487,11 @@ PrefabInstance:
       propertyPath: throwButton
       value: Player 1 Fire
       objectReference: {fileID: 0}
+    - target: {fileID: 5507042080145150621, guid: 44a816a9150f9e344b4451dce4cf8deb,
+        type: 3}
+      propertyPath: throwAfterPickupTime
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5507042080145150622, guid: 44a816a9150f9e344b4451dce4cf8deb,
         type: 3}
       propertyPath: pickUpButton
@@ -1485,22 +1500,22 @@ PrefabInstance:
     - target: {fileID: 5852940719789640683, guid: 44a816a9150f9e344b4451dce4cf8deb,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.00000083446486
+      value: -0.0000013411042
       objectReference: {fileID: 0}
     - target: {fileID: 5852940720240598645, guid: 44a816a9150f9e344b4451dce4cf8deb,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000023990867
+      value: 0.0000008344649
       objectReference: {fileID: 0}
     - target: {fileID: 5852940720517836187, guid: 44a816a9150f9e344b4451dce4cf8deb,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.00000089406956
+      value: -0.0000000745058
       objectReference: {fileID: 0}
     - target: {fileID: 5852940721666375981, guid: 44a816a9150f9e344b4451dce4cf8deb,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000000566244
+      value: -0.00000029802317
       objectReference: {fileID: 0}
     - target: {fileID: 8688418016119019519, guid: 44a816a9150f9e344b4451dce4cf8deb,
         type: 3}
@@ -1510,17 +1525,17 @@ PrefabInstance:
     - target: {fileID: 8688418016119019519, guid: 44a816a9150f9e344b4451dce4cf8deb,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.3504682
+      value: 0.35046837
       objectReference: {fileID: 0}
     - target: {fileID: 8861066122203230132, guid: 44a816a9150f9e344b4451dce4cf8deb,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.9674251
+      value: 0.967425
       objectReference: {fileID: 0}
     - target: {fileID: 8861066122203230132, guid: 44a816a9150f9e344b4451dce4cf8deb,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.25315753
+      value: 0.253158
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44a816a9150f9e344b4451dce4cf8deb, type: 3}
@@ -1798,6 +1813,11 @@ PrefabInstance:
         type: 3}
       propertyPath: throwButton
       value: Player 2 Fire
+      objectReference: {fileID: 0}
+    - target: {fileID: 5507042080145150621, guid: 44a816a9150f9e344b4451dce4cf8deb,
+        type: 3}
+      propertyPath: throwAfterPickupTime
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5507042080145150622, guid: 44a816a9150f9e344b4451dce4cf8deb,
         type: 3}

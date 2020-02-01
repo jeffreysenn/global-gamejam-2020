@@ -131,6 +131,7 @@ MonoBehaviour:
   groundCheckOvershoot: 0.3
   jumpCooldown: 0.1
   flipAxisThreshold: 0.1
+  groundCheckRatio: 0.8
 --- !u!114 &5507042080145150622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,7 +146,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupRange: 1
   pickupOffset: {x: 0, y: 2}
-  throwCooldown: 0.1
 --- !u!114 &5507042080145150621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,7 +158,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19adeb502f076e24dab30a7cd955a43d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwImpulse: {x: 1000, y: 0}
+  maxThrowImpulse: {x: 1000, y: -500}
+  minThrowImpulse: {x: 0, y: 0}
+  maxHoldTime: 1
+  throwAfterPickupTime: 0.1
 --- !u!50 &5507042080145150620
 Rigidbody2D:
   serializedVersion: 4

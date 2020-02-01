@@ -8,19 +8,16 @@ public class PickUp : MonoBehaviour
 {
     [SerializeField] float pickupRange = 1.0f;
     [SerializeField] Vector2 pickupOffset = new Vector2(0, 2);
-    [SerializeField] float throwCooldown = 0.1f;
 
     CapsuleCollider2D capsuleCollider = null;
     InputID inputID = null;
     GameObject pickedUpObject = null;
-    util.Timer throwTimer = new util.Timer(0.0f);
-
+    float pickupTime = 0.0f;
 
     public bool HasPickupable() { return pickedUpObject != null; }
     public void ResetPickupable() { pickedUpObject = null; }
     public GameObject GetPickupable() { return pickedUpObject; }
-
-    public bool CanThrow() { return throwTimer.IsTimeUp() && HasPickupable(); }
+    public float GetPickupTime() { return pickupTime; }
 
     // Start is called before the first frame update
     void Start()
@@ -32,12 +29,8 @@ public class PickUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (HasPickupable())
-        {
-            throwTimer.Countdown(Time.deltaTime);
-        }
-
         var pickUp = inputID.GetActionName(InputID.Action.FIRE);
+
         if (Input.GetButtonDown(pickUp) && !HasPickupable())
         {
             var boxWidth = capsuleCollider.bounds.size.x / 2 + pickupRange;
@@ -60,10 +53,12 @@ public class PickUp : MonoBehaviour
                         {
                             var rgBody = otherObject.GetComponent<Rigidbody2D>();
                             rgBody.isKinematic = true;
+                            rgBody.velocity = Vector2.zero;
                             otherObject.transform.parent = gameObject.transform;
+                            otherObject.transform.localRotation = Quaternion.identity;
                             otherObject.transform.localPosition = pickupOffset;
                             pickedUpObject = otherObject;
-                            throwTimer.SetCountdown(throwCooldown);
+                            pickupTime = Time.time;
                         }
                     }
                 }
