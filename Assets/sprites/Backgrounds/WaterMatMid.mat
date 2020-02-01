@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: WBG3
-  m_Shader: {fileID: -6465566751694194690, guid: 6244bee5017ea41449159165a53c83eb,
+  m_Name: WaterMatMid
+  m_Shader: {fileID: -6465566751694194690, guid: 35ba0a528ca0d6f4a97214ab8ac8ea5e,
     type: 3}
   m_ShaderKeywords: _ALPHAPREMULTIPLY_ON
   m_LightmapFlags: 4
@@ -41,7 +41,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 7a201ff6b44996246ab8d6b5bb84a85b, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6d5125d22b88bc24ab9ceda2b90af7c9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -54,6 +54,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_3CCBDF51_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 202583ce04a1fca4c9d0b307fe769c81, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_453C03_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 957abc5077d953d44b9446d1c5941387, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_A02EFB_Texture_1:
@@ -69,11 +77,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_79693A3E: 0
-    - Vector1_8EC3CEF2: -2
-    - Vector1_D418ED0B: 34
-    - Vector1_DE50E361: 0.2
-    - Vector1_FB0F8E84: 0.05
+    - Vector1_8EC3CEF2: 0.09
+    - Vector1_D418ED0B: 160
+    - Vector1_FB0F8E84: 0.03
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
