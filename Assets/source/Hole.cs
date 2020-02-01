@@ -21,18 +21,18 @@ public class Hole : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D p_Collider)
+    private void OnTriggerEnter2D(Collider2D pCollider)
     {
-        if (p_Collider.CompareTag("Box"))
+        if (pCollider.CompareTag("Box"))
         {
             IsPlugged = true;
             SR.color = Color.green;
         }
     }
 
-    private void OnTriggerExit2D(Collider2D p_Collider)
+    private void OnTriggerExit2D(Collider2D pCollider)
     {
-        if (p_Collider.CompareTag("Box"))
+        if (pCollider.CompareTag("Box"))
         {
             IsPlugged = false;
             SR.color = Color.black;

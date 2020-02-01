@@ -7,6 +7,8 @@ public class HoleManager : MonoBehaviour
     [SerializeField] private float HoleSpawnDelay = 5.0f;
 
     [SerializeField] private Hole HolePrefab = null;
+    [SerializeField] private Transform UnActivatedHoles = null;
+    private List<Hole> ActiveHoles = new List<Hole>();
 
     private BoxCollider2D Collider = null;
     private Rigidbody2D RB = null;
@@ -20,6 +22,10 @@ public class HoleManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        foreach(Transform t in UnActivatedHoles)
+        {
+            Holes.Add(t.GetComponent<Hole>());
+        }
         Collider = GetComponent<BoxCollider2D>();
         RB = GetComponent<Rigidbody2D>();
     }
@@ -29,7 +35,7 @@ public class HoleManager : MonoBehaviour
     {
         if(HoleSpawnTimer < 0)
         {
-            SpawnHole();
+            ActivateHole();
         }
 
         Sink();
@@ -37,13 +43,17 @@ public class HoleManager : MonoBehaviour
         HoleSpawnTimer -= Time.deltaTime;
     }
 
-    private void SpawnHole()
+    private void ActivateHole()
     {
-        float randomX = Random.Range(Collider.bounds.min.x, Collider.bounds.max.x);
-        Vector3 spawnPos = new Vector3(randomX, transform.position.y);
+        int holeIterator = Random.Range(0, Holes.Count);
+        Holes[holeIterator].gameObject.SetActive(true);
+        ActiveHoles.Add(Holes[holeIterator]);
+        Holes.RemoveAt(holeIterator);
+        //float randomX = Random.Range(Collider.bounds.min.x, Collider.bounds.max.x);
+        //Vector3 spawnPos = new Vector3(randomX, transform.position.y);
         
-        Hole newHole = Instantiate(HolePrefab, spawnPos, transform.rotation, transform);
-        Holes.Add(newHole);
+        //Hole newHole = Instantiate(HolePrefab, spawnPos, transform.rotation, transform);
+        //Holes.Add(newHole);
 
         HoleSpawnTimer = HoleSpawnDelay;
     }
@@ -51,7 +61,7 @@ public class HoleManager : MonoBehaviour
     private void Sink()
     {
         int unpluggedHoles = 0;
-        foreach(Hole h in Holes)
+        foreach(Hole h in ActiveHoles)
         {
             if(!h.IsPlugged)
             {
