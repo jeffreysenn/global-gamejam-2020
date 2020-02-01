@@ -1,46 +1,59 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+
+
 
 public class HoleManager : MonoBehaviour
 {
+    [SerializeField] private string TeamName = "Pirates";
+
+    [SerializeField] private string WinText = " won!";
+ 
+
     [SerializeField] private float HoleSpawnDelay = 5.0f;
 
-    [SerializeField] private Hole HolePrefab = null;
     [SerializeField] private Transform UnActivatedHoles = null;
     private List<Hole> ActiveHoles = new List<Hole>();
 
-    private BoxCollider2D Collider = null;
     private Rigidbody2D RB = null;
 
     private List<Hole> Holes = new List<Hole>();
 
     private float HoleSpawnTimer = 0.0f;
 
+    private bool GameIsOver = false;
+
     [SerializeField] private float SinkingVelocity = 20.0f;
 
-    // Start is called before the first frame update
+    [SerializeField] private GameObject GameOverCanvas = null;
+
+
     void Start()
     {
         foreach(Transform t in UnActivatedHoles)
         {
             Holes.Add(t.GetComponent<Hole>());
         }
-        Collider = GetComponent<BoxCollider2D>();
         RB = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if(HoleSpawnTimer < 0)
+        if(!GameIsOver)
         {
-            ActivateHole();
+            ValidateGameState();
+
+            if (HoleSpawnTimer < 0)
+            {
+                ActivateHole();
+            }
+
+            Sink();
+
+            HoleSpawnTimer -= Time.deltaTime;
         }
-
-        Sink();
-
-        HoleSpawnTimer -= Time.deltaTime;
     }
 
     private void ActivateHole()
@@ -49,11 +62,6 @@ public class HoleManager : MonoBehaviour
         Holes[holeIterator].gameObject.SetActive(true);
         ActiveHoles.Add(Holes[holeIterator]);
         Holes.RemoveAt(holeIterator);
-        //float randomX = Random.Range(Collider.bounds.min.x, Collider.bounds.max.x);
-        //Vector3 spawnPos = new Vector3(randomX, transform.position.y);
-        
-        //Hole newHole = Instantiate(HolePrefab, spawnPos, transform.rotation, transform);
-        //Holes.Add(newHole);
 
         HoleSpawnTimer = HoleSpawnDelay;
     }
@@ -71,5 +79,29 @@ public class HoleManager : MonoBehaviour
         Vector2 movement = new Vector2(transform.position.x, transform.position.y - (unpluggedHoles * SinkingVelocity * Time.deltaTime));
 
         RB.MovePosition(movement);
+    }
+
+    private void ValidateGameState()
+    {
+        if(GameOverCanvas.activeInHierarchy)
+        {
+            GameIsOver = true;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D pCollision)
+    {
+        if(GameIsOver)
+        {
+            return;
+        }
+        if (pCollision.CompareTag("SinkTrigger"))
+        {
+            RB.isKinematic = false;
+            RB.gravityScale = 0.5f;
+            GameOverCanvas.gameObject.SetActive(true);
+            GameObject.Find("WinText").GetComponent<TextMeshProUGUI>().text = TeamName + WinText;
+            GameIsOver = true;
+        }
     }
 }
