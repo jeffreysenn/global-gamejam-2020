@@ -13,7 +13,7 @@ public class MovementComponent : MonoBehaviour
     [SerializeField] float groundCheckOvershoot = .3f;
     [SerializeField] float jumpCooldown = .1f;
     [SerializeField] float flipAxisThreshold = .1f;
-    [SerializeField] float groundCheckRatio = .8f;
+    [SerializeField] float groundCheckRatio = 1.2f;
 
     Rigidbody2D rgBody = null;
     CapsuleCollider2D capsuleCollider = null;
@@ -49,6 +49,7 @@ public class MovementComponent : MonoBehaviour
     {
         if (shouldJump)
         {
+            gameObject.layer = 9;
             rgBody.AddForce(transform.up * jumpImpulse, ForceMode2D.Impulse);
             shouldJump = false;
         }
@@ -83,7 +84,11 @@ public class MovementComponent : MonoBehaviour
         {
             var areSameObject = GameObject.ReferenceEquals(hit.transform.gameObject, gameObject);
             if (!areSameObject)
+            {
+                if (jumpTimer.IsTimeUp())
+                    gameObject.layer = 8;
                 return true;
+            }
         }
         return false;
     }
