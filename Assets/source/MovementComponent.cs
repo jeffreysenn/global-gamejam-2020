@@ -13,6 +13,7 @@ public class MovementComponent : MonoBehaviour
     [SerializeField] float groundCheckOvershoot = .3f;
     [SerializeField] float jumpCooldown = .1f;
     [SerializeField] float flipAxisThreshold = .1f;
+    [SerializeField] float groundCheckRatio = .8f;
 
     Rigidbody2D rgBody = null;
     CapsuleCollider2D capsuleCollider = null;
@@ -71,10 +72,11 @@ public class MovementComponent : MonoBehaviour
 
     private bool IsGrounded()
     {
-        float radius = capsuleCollider.bounds.size.y / 2;
+        float radius = capsuleCollider.bounds.size.x / 2;
         float raycastDistance = capsuleCollider.bounds.size.y / 2 - radius + groundCheckOvershoot;
-        RaycastHit2D[] hits = Physics2D.CircleCastAll(capsuleCollider.bounds.center, 
-            radius,  
+        RaycastHit2D[] hits = Physics2D.CircleCastAll(
+            capsuleCollider.bounds.center, 
+            radius * groundCheckRatio,  
             - Vector2.up, 
             raycastDistance);
         foreach (RaycastHit2D hit in hits)
