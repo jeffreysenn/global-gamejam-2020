@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Cloud2
-  m_Shader: {fileID: -6465566751694194690, guid: b50524ed89c8ff143871e2722aefd2be,
+  m_Shader: {fileID: -6465566751694194690, guid: 66fa20cd365c7114489f7fc9d84896ba,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -57,8 +57,16 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_70E73FBF_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 4128717da54c3e948b8a838982ca8201, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_74827EEE_Texture_1:
         m_Texture: {fileID: 2800000, guid: f213357a39f0d084ba671d42d98518f8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_786E3B2_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 29c3e67f62ea75b4f9fe187d69e152c6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_FB870362_Texture_1:
@@ -70,6 +78,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_E12C776A: 0.1
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1

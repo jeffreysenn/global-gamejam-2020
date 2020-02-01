@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: WBG2
-  m_Shader: {fileID: -6465566751694194690, guid: 35ba0a528ca0d6f4a97214ab8ac8ea5e,
+  m_Name: WaterMatBack
+  m_Shader: {fileID: -6465566751694194690, guid: 2a9c76f9f60eb704495a0fd235f3de02,
     type: 3}
   m_ShaderKeywords: _ALPHAPREMULTIPLY_ON
   m_LightmapFlags: 4
@@ -41,7 +41,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 6d5125d22b88bc24ab9ceda2b90af7c9, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6422043b5814ddd48b6f1e8c33deedfc, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -56,16 +56,16 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_3CCBDF51_Texture_1:
-        m_Texture: {fileID: 2800000, guid: 202583ce04a1fca4c9d0b307fe769c81, type: 3}
+    - _SampleTexture2D_13A01785_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 72597c26e31b49d4d9c1214f1fc13670, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_79CAA259_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 6d5125d22b88bc24ab9ceda2b90af7c9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_A02EFB_Texture_1:
         m_Texture: {fileID: 2800000, guid: 7a201ff6b44996246ab8d6b5bb84a85b, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_EBB0B623_Texture_1:
-        m_Texture: {fileID: 2800000, guid: 6422043b5814ddd48b6f1e8c33deedfc, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_FB698B72_Texture_1:
@@ -73,9 +73,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_8EC3CEF2: 0.09
-    - Vector1_D418ED0B: 32
-    - Vector1_FB0F8E84: 0.03
+    - Vector1_8EC3CEF2: -2
+    - Vector1_D418ED0B: 160
+    - Vector1_FB0F8E84: 0.01
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
