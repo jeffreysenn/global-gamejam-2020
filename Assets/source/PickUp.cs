@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(CapsuleCollider2D))]
 public class PickUp : MonoBehaviour
 {
     [SerializeField] float pickupRange = 1.0f;
@@ -10,7 +11,9 @@ public class PickUp : MonoBehaviour
     CapsuleCollider2D capsuleCollider;
     GameObject pickedUpObject = null;
 
-    bool hasPickupable() { return pickedUpObject != null; }
+    public bool hasPickupable() { return pickedUpObject != null; }
+    public void resetPickupable() { pickedUpObject = null; }
+    public GameObject getPickupable() { return pickedUpObject; }
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +27,10 @@ public class PickUp : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && !hasPickupable())
         {
             var raycastDistance = capsuleCollider.bounds.size.y / 2 + pickupRange;
-            RaycastHit2D[] hits = Physics2D.RaycastAll(capsuleCollider.bounds.center, Vector2.right, raycastDistance);
+            RaycastHit2D[] hits = Physics2D.RaycastAll(
+                capsuleCollider.bounds.center,
+                transform.localScale.x * Vector2.right,
+                raycastDistance);
             foreach (var hit in hits)
             {
                 var otherObject = hit.transform.gameObject;

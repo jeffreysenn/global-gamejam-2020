@@ -703,6 +703,7 @@ GameObject:
   - component: {fileID: 1082680083}
   - component: {fileID: 1082680087}
   - component: {fileID: 1082680086}
+  - component: {fileID: 1082680085}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -791,6 +792,7 @@ MonoBehaviour:
   airControl: 0.5
   groundCheckOvershoot: 0.3
   jumpCooldown: 0.1
+  flipAxisThreshold: 0.1
 --- !u!70 &1082680083
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -828,6 +830,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1082680085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082680079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19adeb502f076e24dab30a7cd955a43d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  throwImpulse: {x: 500, y: 0}
 --- !u!114 &1082680086
 MonoBehaviour:
   m_ObjectHideFlags: 0
