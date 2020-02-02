@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(PickUp))]
 [RequireComponent(typeof(InputID))]
@@ -12,6 +13,9 @@ public class Throw : MonoBehaviour
     [SerializeField] float tossThreshold = 0.2f;
     [SerializeField] float maxHoldTime = 1.0f;
     [SerializeField] float throwAfterPickupTime = 0.1f;
+
+    public UnityEvent dropEvent { get; } = new UnityEvent();
+    public UnityEvent tossEvent { get; } = new UnityEvent();
 
     InputID inputID = null;
     PickUp pickup = null;
@@ -44,12 +48,14 @@ public class Throw : MonoBehaviour
                 var fraction = holdButtonTime > maxHoldTime ? 1.0f : holdButtonTime / maxHoldTime;
                 impulse = Vector2.Lerp(minThrowImpulse, maxThrowImpulse, fraction);
                 impulse.x *= transform.localScale.x;
+                tossEvent.Invoke();
             }
             else
             {
                 var offset = dropOffset;
                 offset.x *= transform.localScale.x;
                 pickupable.transform.position =  ((Vector2)transform.position + offset);
+                dropEvent.Invoke();
             }
             rgBody.isKinematic = false;
             holdButtonTime = -1.0f;

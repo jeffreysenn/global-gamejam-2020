@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(CapsuleCollider2D))]
 [RequireComponent(typeof(InputID))]
@@ -8,6 +9,8 @@ public class PickUp : MonoBehaviour
 {
     [SerializeField] float pickupRange = 1.0f;
     [SerializeField] Vector2 pickupOffset = new Vector2(0, 2);
+
+    public UnityEvent pickupEvent { get; } = new UnityEvent();
 
     CapsuleCollider2D capsuleCollider = null;
     InputID inputID = null;
