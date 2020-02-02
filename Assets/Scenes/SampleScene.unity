@@ -948,6 +948,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa54045704584964a8a311dade754479, type: 3}
+--- !u!1001 &657932246
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4591562903277459616, guid: f283103681dd9ff4eab06dfbdfd5a572,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.641377
+      objectReference: {fileID: 0}
+    - target: {fileID: 4591562903277459616, guid: f283103681dd9ff4eab06dfbdfd5a572,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.8360698
+      objectReference: {fileID: 0}
+    - target: {fileID: 4591562903277459616, guid: f283103681dd9ff4eab06dfbdfd5a572,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.285011
+      objectReference: {fileID: 0}
+    - target: {fileID: 4591562903277459616, guid: f283103681dd9ff4eab06dfbdfd5a572,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4591562903277459616, guid: f283103681dd9ff4eab06dfbdfd5a572,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4591562903277459616, guid: f283103681dd9ff4eab06dfbdfd5a572,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4591562903277459616, guid: f283103681dd9ff4eab06dfbdfd5a572,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4591562903277459616, guid: f283103681dd9ff4eab06dfbdfd5a572,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4591562903277459616, guid: f283103681dd9ff4eab06dfbdfd5a572,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4591562903277459616, guid: f283103681dd9ff4eab06dfbdfd5a572,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4591562903277459616, guid: f283103681dd9ff4eab06dfbdfd5a572,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4591562903277459618, guid: f283103681dd9ff4eab06dfbdfd5a572,
+        type: 3}
+      propertyPath: m_Name
+      value: MusicPlayer
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f283103681dd9ff4eab06dfbdfd5a572, type: 3}
 --- !u!1001 &870638350
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1920,7 +1989,7 @@ PrefabInstance:
     - target: {fileID: 5782137409770122424, guid: ab17b2ed74e168749ac1e687a17647e7,
         type: 3}
       propertyPath: StartKey
-      value: 32
+      value: 293
       objectReference: {fileID: 0}
     - target: {fileID: 5782137409770122424, guid: ab17b2ed74e168749ac1e687a17647e7,
         type: 3}
@@ -2149,6 +2218,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3071389440979038108, guid: 9b5032139626c764e976e6c80fb37969,
+        type: 3}
+      propertyPath: m_TagString
+      value: PlayerOne
+      objectReference: {fileID: 0}
     - target: {fileID: 3737266086707255544, guid: 9b5032139626c764e976e6c80fb37969,
         type: 3}
       propertyPath: m_LocalRotation.z
@@ -2252,6 +2326,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PirateBoat
+      objectReference: {fileID: 0}
+    - target: {fileID: 4025430506941282369, guid: c5ac6cabd324af34094488e7767b64cf,
+        type: 3}
+      propertyPath: StartKey
+      value: 293
       objectReference: {fileID: 0}
     - target: {fileID: 4025430506941282372, guid: c5ac6cabd324af34094488e7767b64cf,
         type: 3}
@@ -2429,6 +2508,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: VikingBoat
+      objectReference: {fileID: 0}
+    - target: {fileID: 4025430506941282369, guid: 4ecea2631373de5468ee7161301a2832,
+        type: 3}
+      propertyPath: team
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4025430506941282369, guid: 4ecea2631373de5468ee7161301a2832,
+        type: 3}
+      propertyPath: StartKey
+      value: 293
       objectReference: {fileID: 0}
     - target: {fileID: 4025430506941282372, guid: 4ecea2631373de5468ee7161301a2832,
         type: 3}
