@@ -29,9 +29,6 @@ public class HoleManager : MonoBehaviour
 
     [SerializeField] private float SinkingVelocity = 20.0f;
 
-    [SerializeField] private GameObject GameOverCanvas = null;
-
-
     void Start()
     {
         foreach(Transform t in UnActivatedHoles)
@@ -45,8 +42,6 @@ public class HoleManager : MonoBehaviour
     {
         if(!GameIsOver)
         {
-            ValidateGameState();
-
             if (HoleSpawnTimer < 0)
             {
                 ActivateHole();
@@ -82,15 +77,6 @@ public class HoleManager : MonoBehaviour
 
         RB.MovePosition(movement);
     }
-
-    private void ValidateGameState()
-    {
-        if(GameOverCanvas.activeInHierarchy)
-        {
-            GameIsOver = true;
-        }
-    }
-
     private void OnTriggerEnter2D(Collider2D pCollision)
     {
         if(GameIsOver)
