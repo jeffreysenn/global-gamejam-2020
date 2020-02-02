@@ -32,7 +32,7 @@ GameObject:
   - component: {fileID: 6540165925004075377}
   m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -215,6 +215,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43a28ba6deda25342968e94fc7531fe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupAudio: {fileID: 0}
+  dropAudio: {fileID: 0}
+  tossAudio: {fileID: 0}
 --- !u!82 &6540165925004075377
 AudioSource:
   m_ObjectHideFlags: 0

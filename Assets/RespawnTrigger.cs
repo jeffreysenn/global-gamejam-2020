@@ -20,6 +20,9 @@ public class RespawnTrigger : MonoBehaviour
     {
         if (RespawnPoint == null)
             return;
-        pCollision.transform.position = RespawnPoint;
+        if(pCollision.CompareTag("Player"))
+        {
+            pCollision.transform.position = RespawnPoint;
+        }
     }
 }

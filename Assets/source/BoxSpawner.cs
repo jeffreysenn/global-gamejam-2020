@@ -5,7 +5,10 @@ using TMPro;
 
 public class BoxSpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject BoxPrefab = null;
+    [SerializeField] private GameObject[] SpawnPrefabs = null;
+    [SerializeField] private SpriteRenderer SpawnObjectSprite = null;
+
+    private GameObject NextObjectToSpawn = null;
 
     [SerializeField] private float SpawnDelay = 3.0f;
 
@@ -17,7 +20,7 @@ public class BoxSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        NextObjectToSpawn = SpawnPrefabs[Random.Range(0, SpawnPrefabs.Length)];
     }
 
     // Update is called once per frame
@@ -37,7 +40,9 @@ public class BoxSpawner : MonoBehaviour
 
     private void SpawnBox()
     {
-        Instantiate(BoxPrefab, transform);
+        Instantiate(NextObjectToSpawn, transform);
+        NextObjectToSpawn = SpawnPrefabs[Random.Range(0, SpawnPrefabs.Length)];
+        SpawnObjectSprite.sprite = NextObjectToSpawn.GetComponent<SpriteRenderer>().sprite;
         SpawnTimer = SpawnDelay;
     }
 }
