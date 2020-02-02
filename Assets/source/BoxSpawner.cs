@@ -7,6 +7,8 @@ public class BoxSpawner : MonoBehaviour
 {
     private GameState state = GameState.INIT;
 
+    [SerializeField] private Seagull[] Seagulls = null;
+
     [SerializeField] private KeyCode StartKey = KeyCode.Space;
 
     [SerializeField] private GameObject[] SpawnPrefabs = null;
@@ -34,6 +36,7 @@ public class BoxSpawner : MonoBehaviour
         if (Input.GetKeyDown(StartKey))
         {
             state = GameState.RUNNING;
+            SpawnBox();
         }
 
         if (state == GameState.INIT)
@@ -54,7 +57,15 @@ public class BoxSpawner : MonoBehaviour
 
     private void SpawnBox()
     {
-        Instantiate(NextObjectToSpawn, transform);
+        GameObject newBox = Instantiate(NextObjectToSpawn, transform);
+        foreach(Seagull s in Seagulls)
+        {
+            if(!s.IsActive)
+            {
+                s.AttachNewBox(newBox.GetComponent<Rigidbody2D>());
+                break;
+            }
+        }
         NextObjectToSpawn = SpawnPrefabs[Random.Range(0, SpawnPrefabs.Length)];
         SpawnObjectSprite.sprite = NextObjectToSpawn.GetComponent<SpriteRenderer>().sprite;
         SpawnTimer = SpawnDelay;
