@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class BoxSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject BoxPrefab = null;
 
     [SerializeField] private float SpawnDelay = 3.0f;
+
+    [SerializeField] private TextMeshPro Text = null;
     [SerializeField] private int SpawnMax = 7;
 
     private float SpawnTimer = 0.0f;
@@ -21,6 +24,8 @@ public class BoxSpawner : MonoBehaviour
     void Update()
     {
         GameObject[] allBoxes = GameObject.FindGameObjectsWithTag("Box");
+
+        Text.text = Mathf.RoundToInt(SpawnTimer).ToString();
 
         SpawnTimer -= Time.deltaTime;
         if(SpawnTimer < 0
