@@ -29,10 +29,11 @@ GameObject:
   - component: {fileID: 5507042080145150620}
   - component: {fileID: 5507042080145150619}
   - component: {fileID: 6548480514259768528}
+  - component: {fileID: 3832399418191633361}
   - component: {fileID: 6540165925004075377}
   m_Layer: 8
   m_Name: Player
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -162,6 +163,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxThrowImpulse: {x: 1000, y: 800}
   minThrowImpulse: {x: 100, y: 0}
+  minThrowImpulsePlayer: {x: 10, y: 0}
+  maxThrowImpulsePlayer: {x: 50, y: 0}
+  forceDropPlayerTime: 2
   dropOffset: {x: 1, y: 0}
   tossThreshold: 0.2
   maxHoldTime: 1
@@ -218,6 +222,18 @@ MonoBehaviour:
   pickupAudio: {fileID: 0}
   dropAudio: {fileID: 0}
   tossAudio: {fileID: 0}
+--- !u!114 &3832399418191633361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5507042080145150599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57a88c1965e35494bb70b6dac37df3f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!82 &6540165925004075377
 AudioSource:
   m_ObjectHideFlags: 0

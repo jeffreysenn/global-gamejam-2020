@@ -21,6 +21,7 @@ public class MovementComponent : MonoBehaviour
     bool shouldJump = false;
     util.Timer jumpTimer = new util.Timer(0.0f);
 
+
     private void Start()
     {
         rgBody = GetComponent<Rigidbody2D>();
@@ -71,7 +72,7 @@ public class MovementComponent : MonoBehaviour
         rgBody.velocity = new Vector2(walkSpeed, rgBody.velocity.y);
     }
 
-    private bool IsGrounded()
+    public bool IsGrounded()
     {
         float radius = capsuleCollider.bounds.size.x / 2;
         float raycastDistance = capsuleCollider.bounds.size.y / 2 - radius + groundCheckOvershoot;
