@@ -7,12 +7,13 @@ public class Hole : MonoBehaviour
     [HideInInspector]
     public bool IsPlugged = false;
 
-    private SpriteRenderer SR = null;
+
+    [SerializeField] private MeshRenderer WaterSpout = null;
 
     // Start is called before the first frame update
     void Start()
     {
-        SR = GetComponent<SpriteRenderer>();
+
     }
 
     // Update is called once per frame
@@ -26,7 +27,7 @@ public class Hole : MonoBehaviour
         if (pCollider.CompareTag("Box"))
         {
             IsPlugged = true;
-            SR.color = Color.green;
+            WaterSpout.enabled = false;
         }
     }
 
@@ -35,7 +36,7 @@ public class Hole : MonoBehaviour
         if (pCollider.CompareTag("Box"))
         {
             IsPlugged = false;
-            SR.color = Color.black;
+            WaterSpout.enabled = false;
         }
     }
 }
