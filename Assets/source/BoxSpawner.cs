@@ -5,6 +5,10 @@ using TMPro;
 
 public class BoxSpawner : MonoBehaviour
 {
+    private GameState state = GameState.INIT;
+
+    [SerializeField] private KeyCode StartKey = KeyCode.Space;
+
     [SerializeField] private GameObject[] SpawnPrefabs = null;
     [SerializeField] private SpriteRenderer SpawnObjectSprite = null;
 
@@ -27,6 +31,15 @@ public class BoxSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(StartKey))
+        {
+            state = GameState.RUNNING;
+        }
+
+        if (state == GameState.INIT)
+        {
+            return;
+        }
         GameObject[] allBoxes = GameObject.FindGameObjectsWithTag("Box");
 
         Text.text = Mathf.RoundToInt(SpawnTimer).ToString();

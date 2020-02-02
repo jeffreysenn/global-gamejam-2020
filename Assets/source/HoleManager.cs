@@ -4,6 +4,13 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
+public enum GameState
+{
+    INIT,
+    RUNNING,
+    ENDED
+}
+
 public class HoleManager : MonoBehaviour
 {
     private enum Team
@@ -11,7 +18,11 @@ public class HoleManager : MonoBehaviour
         PIRATES,
         VIKINGS
     }
-   
+
+    private GameState state;
+
+    [SerializeField] private KeyCode StartKey = KeyCode.Space;
+
     [SerializeField] private float HoleSpawnDelay = 5.0f;
 
     [SerializeField] private Transform UnActivatedHoles = null;
@@ -31,6 +42,8 @@ public class HoleManager : MonoBehaviour
 
     void Start()
     {
+        state = GameState.INIT;
+
         foreach(Transform t in UnActivatedHoles)
         {
             Holes.Add(t.GetComponent<Hole>());
@@ -40,7 +53,16 @@ public class HoleManager : MonoBehaviour
 
     void Update()
     {
-        if(!GameIsOver)
+        if (Input.GetKeyDown(StartKey))
+        {
+            state = GameState.RUNNING;
+        }
+
+        if (state == GameState.INIT)
+        {
+            return;
+        }
+        if (!GameIsOver)
         {
             if (HoleSpawnTimer < 0)
             {

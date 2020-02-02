@@ -1700,6 +1700,11 @@ PrefabInstance:
       propertyPath: SpawnObjectSprite
       value: 
       objectReference: {fileID: 489224297}
+    - target: {fileID: 5782137409770122424, guid: ab17b2ed74e168749ac1e687a17647e7,
+        type: 3}
+      propertyPath: StartKey
+      value: 32
+      objectReference: {fileID: 0}
     - target: {fileID: 5782137409770122427, guid: ab17b2ed74e168749ac1e687a17647e7,
         type: 3}
       propertyPath: m_Name
