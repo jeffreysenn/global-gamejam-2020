@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class HoleManager : MonoBehaviour
 {
-    [SerializeField] private string TeamName = "Pirates";
-
-    [SerializeField] private string WinText = " won!";
- 
-
+    private enum Team
+    {
+        PIRATES,
+        VIKINGS
+    }
+   
     [SerializeField] private float HoleSpawnDelay = 5.0f;
 
     [SerializeField] private Transform UnActivatedHoles = null;
@@ -22,6 +24,8 @@ public class HoleManager : MonoBehaviour
     private float HoleSpawnTimer = 0.0f;
 
     private bool GameIsOver = false;
+
+    [SerializeField] private Team team;
 
     [SerializeField] private float SinkingVelocity = 20.0f;
 
@@ -97,9 +101,22 @@ public class HoleManager : MonoBehaviour
         {
             RB.isKinematic = false;
             RB.gravityScale = 0.5f;
-            GameOverCanvas.gameObject.SetActive(true);
-            GameObject.Find("WinText").GetComponent<TextMeshProUGUI>().text = TeamName + WinText;
+
+            Invoke("LoadWinScene", 2.0f);
+
             GameIsOver = true;
+        }
+    }
+
+    private void LoadWinScene()
+    {
+        if (team == Team.PIRATES)
+        {
+            SceneManager.LoadScene(1);
+        }
+        if (team == Team.VIKINGS)
+        {
+            SceneManager.LoadScene(2);
         }
     }
 }
