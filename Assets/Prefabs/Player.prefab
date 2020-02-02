@@ -33,7 +33,7 @@ GameObject:
   - component: {fileID: 6540165925004075377}
   m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -149,6 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupRange: 1
   pickupOffset: {x: 0, y: 2}
+  releasePlayerFreezeTime: 0.3
 --- !u!114 &5507042080145150621
 MonoBehaviour:
   m_ObjectHideFlags: 0

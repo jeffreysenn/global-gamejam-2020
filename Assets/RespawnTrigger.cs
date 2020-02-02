@@ -2,8 +2,8 @@
 
 public class RespawnTrigger : MonoBehaviour
 {
-    //[SerializeField] private Transform RespawnPoint = null;
-    [SerializeField] private Vector3 RespawnPoint = new Vector3(10, 13);
+    [SerializeField] private Vector3 RespawnPointTeamOne = new Vector3(10, 13);
+    [SerializeField] private Vector3 RespawnPointTeamTwo = new Vector3(10, 13);
 
     void Start()
     {
@@ -18,11 +18,13 @@ public class RespawnTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D pCollision)
     {
-        if (RespawnPoint == null)
-            return;
-        if(pCollision.CompareTag("Player"))
+        if(pCollision.CompareTag("PlayerOne"))
         {
-            pCollision.transform.position = RespawnPoint;
+            pCollision.transform.position = RespawnPointTeamOne;
+        }
+        if (pCollision.CompareTag("PlayerTwo"))
+        {
+            pCollision.transform.position = RespawnPointTeamTwo;
         }
     }
 }

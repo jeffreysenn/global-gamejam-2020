@@ -143,6 +143,21 @@ PrefabInstance:
       propertyPath: RespawnPoint.y
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 8210766103891724007, guid: f9ad4ab6f01ed0f4998ebe890ca9a566,
+        type: 3}
+      propertyPath: RespawnPointTeamOne.x
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210766103891724007, guid: f9ad4ab6f01ed0f4998ebe890ca9a566,
+        type: 3}
+      propertyPath: RespawnPointTeamOne.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210766103891724007, guid: f9ad4ab6f01ed0f4998ebe890ca9a566,
+        type: 3}
+      propertyPath: RespawnPointTeamTwo.y
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8210766103891724009, guid: f9ad4ab6f01ed0f4998ebe890ca9a566,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -798,6 +813,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5507042080145150599, guid: 44a816a9150f9e344b4451dce4cf8deb,
+        type: 3}
+      propertyPath: m_TagString
+      value: PlayerTwo
+      objectReference: {fileID: 0}
     - target: {fileID: 5507042080145150617, guid: 44a816a9150f9e344b4451dce4cf8deb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1051,6 +1071,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5507042080145150599, guid: 44a816a9150f9e344b4451dce4cf8deb,
+        type: 3}
+      propertyPath: m_TagString
+      value: PlayerOne
       objectReference: {fileID: 0}
     - target: {fileID: 5507042080145150617, guid: 44a816a9150f9e344b4451dce4cf8deb,
         type: 3}
@@ -1463,6 +1488,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5507042080145150599, guid: 44a816a9150f9e344b4451dce4cf8deb,
+        type: 3}
+      propertyPath: m_TagString
+      value: PlayerOne
       objectReference: {fileID: 0}
     - target: {fileID: 5507042080145150617, guid: 44a816a9150f9e344b4451dce4cf8deb,
         type: 3}
@@ -1942,6 +1972,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5507042080145150599, guid: 44a816a9150f9e344b4451dce4cf8deb,
+        type: 3}
+      propertyPath: m_TagString
+      value: PlayerTwo
       objectReference: {fileID: 0}
     - target: {fileID: 5507042080145150617, guid: 44a816a9150f9e344b4451dce4cf8deb,
         type: 3}

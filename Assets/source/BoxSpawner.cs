@@ -20,6 +20,7 @@ public class BoxSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SpawnTimer = SpawnDelay;
         NextObjectToSpawn = SpawnPrefabs[Random.Range(0, SpawnPrefabs.Length)];
     }
 
