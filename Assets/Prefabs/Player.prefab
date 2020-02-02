@@ -165,7 +165,7 @@ MonoBehaviour:
   maxThrowImpulse: {x: 1000, y: 800}
   minThrowImpulse: {x: 100, y: 0}
   minThrowImpulsePlayer: {x: 10, y: 0}
-  maxThrowImpulsePlayer: {x: 50, y: 0}
+  maxThrowImpulsePlayer: {x: 50, y: 40}
   forceDropPlayerTime: 2
   dropOffset: {x: 1, y: 0}
   tossThreshold: 0.2

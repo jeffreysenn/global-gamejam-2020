@@ -1,24 +1,21 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 public class RespawnTrigger : MonoBehaviour
 {
     [SerializeField] private Vector3 RespawnPointTeamOne = new Vector3(10, 13);
     [SerializeField] private Vector3 RespawnPointTeamTwo = new Vector3(10, 13);
 
-    void Start()
-    {
-
-    }
-
-    void Update()
-    {
-        
-    }
-
+    public UnityEvent triggerEvent { get; } = new UnityEvent();
 
     private void OnTriggerEnter2D(Collider2D pCollision)
     {
-        if(pCollision.CompareTag("PlayerOne"))
+        var rgBody = pCollision.GetComponent<Rigidbody2D>();
+        if (rgBody)
+        {
+            rgBody.velocity = Vector2.zero;
+        }
+        if (pCollision.CompareTag("PlayerOne"))
         {
             pCollision.transform.position = RespawnPointTeamOne;
         }
@@ -26,5 +23,7 @@ public class RespawnTrigger : MonoBehaviour
         {
             pCollision.transform.position = RespawnPointTeamTwo;
         }
+
+        triggerEvent.Invoke();
     }
 }
